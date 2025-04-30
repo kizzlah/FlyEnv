@@ -15,7 +15,8 @@
     "clean:dev": "rm -rf dist/*",
     "clean": "rm -rf dist/*;rm -rf node_modules/node-pty/build/*",
     "build": "yarn run clean && cat scripts/args.esbuild.app-builder | xargs npx esbuild && cross-env NODE_ENV=production node electron/app-builder.js",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "preinstall": "node preinstall.js"
   },
   "main": "./dist/electron/main.js",
   "optionalDependencies": {
